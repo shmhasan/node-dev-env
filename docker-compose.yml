@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  app:
+    image: ${IMAGE_NAME}:${IMAGE_VERSION}
+    build: .
+    platform: ${PLATFORM}
+    tty: true
+    command: "/bin/sh"
+    container_name: ${CONTAINER_NAME}
+    networks:
+      - annonnet
+
+
+networks:
+  annonnet:
+    driver: bridge
+    name: annonnet
+
